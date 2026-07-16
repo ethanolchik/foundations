@@ -1,0 +1,19 @@
+Cargo.toml
+  s_b4dbd015fff638::t_dc158c4dd86f67 45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "fbb1950567aad29945b653cf70d69861a3401f60",
+  "prompts": {},
+  "sessions": {
+    "s_b4dbd015fff638": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_094e4a2a4ffeaKaITsQQCARWtT",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
