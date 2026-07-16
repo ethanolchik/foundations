@@ -1,0 +1,51 @@
+RELEASE_NOTES.md
+  s_b4dbd015fff638::t_c7114b6778e9b9 2-14
+foundations-macros/src/span_fn.rs
+  s_b4dbd015fff638::t_93a3c72f1be55c 50-52,67-70,129,132,202,205,212-221,258-287,350-381
+foundations-metrics/src/metrics/gauge.rs
+  s_b4dbd015fff638::t_fb0a8a45c9775f 13-15,17-32,255-256,258-261,263-275,343,345-346,349-352,356-357,362-366,406-407,409-424,445,447-448
+foundations-metrics/src/registered.rs
+  s_b4dbd015fff638::t_56b6a9fff500f7 31-32
+foundations/Cargo.toml
+  s_b4dbd015fff638::t_3009f0a0de3946 151-163,239,254
+foundations/src/telemetry/mod.rs
+  s_b4dbd015fff638::t_5b4d5b30aa34ab 76-79,145-150,272-274,280-282,365-374
+foundations/src/telemetry/settings/mod.rs
+  s_b4dbd015fff638::t_970b3363abe969 9-11,33-35,62-65
+foundations/src/telemetry/settings/user_tracing.rs
+  s_b4dbd015fff638::t_4eca83e953221c 1-114
+foundations/src/telemetry/telemetry_context.rs
+  s_b4dbd015fff638::t_a9a33f16642d62 24-32,110-112,115-117,130-132,135-137,196-198,201-207,364-366,420-422,425-427,501-503,506-508
+foundations/src/telemetry/testing.rs
+  s_b4dbd015fff638::t_848f442e60db4f 45-47,68-70,79-81,84-86,92-94,156-161
+foundations/src/telemetry/tracing/channel.rs
+  s_b4dbd015fff638::t_bf2aebea8b5f8c 59-63
+foundations/src/telemetry/tracing/init.rs
+  s_b4dbd015fff638::t_c0f796d98f9157 17-23,31-33,49-64,81-86,178-233
+foundations/src/telemetry/tracing/internal.rs
+  s_b4dbd015fff638::t_1d5623b2b5a303 6-7,9-10,67-69,71-73,77-91,108,111,157-214,260,265,272
+foundations/src/telemetry/tracing/mod.rs
+  s_b4dbd015fff638::t_74e1df359dbec8 21-26,28-30,42-47,238-295,441-454,505-560,875-948,1141-1621
+foundations/src/telemetry/tracing/output_otlp_uds.rs
+  s_b4dbd015fff638::t_909a82e0a9be65 1-591
+foundations/src/telemetry/tracing/testing.rs
+  s_b4dbd015fff638::t_1d137aa657325c 163-178,273-277
+foundations/src/telemetry/tracing/traceparent.rs
+  s_b4dbd015fff638::t_4fa0f043a91014 1-267
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "7463323b7033d3ffc258f5f52f9d7e7cd98d55da",
+  "prompts": {},
+  "sessions": {
+    "s_b4dbd015fff638": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_094e4a2a4ffeaKaITsQQCARWtT",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
