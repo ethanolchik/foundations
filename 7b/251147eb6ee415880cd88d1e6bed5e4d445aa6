@@ -1,0 +1,19 @@
+foundations-metrics/src/validation.rs
+  s_44b694b873f293::t_ef484374eeb15f 1-332
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "7b251147eb6ee415880cd88d1e6bed5e4d445aa6",
+  "prompts": {},
+  "sessions": {
+    "s_44b694b873f293": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_07ac461ddffej1qaC8soezJKiW",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
