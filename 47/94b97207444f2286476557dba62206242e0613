@@ -1,0 +1,23 @@
+foundations-metrics/src/collect.rs
+  s_c9f375c01e9da4::t_5c0f076cb87030 6,37,40,224,226,236-237,242,244,254-263,336,348,418-422,428,433,491,497-502,511,513-518
+foundations-metrics/src/encoding/text.rs
+  s_c9f375c01e9da4::t_ed83c69a67d1ab 10-18,49,56,63,292,333,342-358,360-381,390-411,494,537-540,568,598-641,645,648,668-673,678,691,748-749,757,765,820-828
+foundations-metrics/src/validation.rs
+  s_c9f375c01e9da4::t_2fa4d9c8b24fc6 7,26-27,34,54,73,123,144,227,243,251,253-254,259-262
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "4794b97207444f2286476557dba62206242e0613",
+  "prompts": {},
+  "sessions": {
+    "s_c9f375c01e9da4": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_07ac65ceaffeTYJrKPc480Ia1Y",
+        "model": "@cf/moonshotai/kimi-k2.6"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
