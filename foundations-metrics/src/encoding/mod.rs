@@ -6,7 +6,7 @@ use prost::Message;
 use crate::MetricFamily;
 use crate::validation::{ValidationContext, sanitized_metric_family};
 
-pub use text::encode_to_text;
+pub use text::{OPENMETRICS_CONTENT_TYPE, encode_to_text};
 
 /// Encodes metric families as length-delimited Prometheus protobuf messages.
 pub fn encode_to_protobuf(families: &[MetricFamily]) -> Vec<u8> {
@@ -51,13 +51,13 @@ mod tests {
     }
 
     #[test]
-    fn fully_valid_protobuf_output_is_unchanged() {
+    fn utf8_protobuf_output_is_unchanged() {
         let families = [MetricFamily {
-            name: Some("valid:counter".to_owned()),
+            name: Some("valid counter λ".to_owned()),
             help: Some("Valid counter.".to_owned()),
             r#type: Some(MetricType::Counter as i32),
             metric: vec![Metric {
-                label: vec![label("_label", "value")],
+                label: vec![label("_label.name λ", "value")],
                 counter: Some(Counter {
                     value: Some(1.0),
                     exemplar: Some(Exemplar::default()),
@@ -86,8 +86,18 @@ mod tests {
     }
 
     #[test]
-    fn protobuf_defensively_omits_invalid_families_and_rows_and_strips_exemplars() {
+    fn protobuf_keeps_nonstandard_names_and_omits_empty_duplicate_and_reserved_names() {
         let families = [
+            MetricFamily {
+                name: Some(String::new()),
+                help: None,
+                r#type: Some(MetricType::Gauge as i32),
+                metric: vec![Metric {
+                    gauge: Some(Gauge { value: Some(100.0) }),
+                    ..Default::default()
+                }],
+                unit: None,
+            },
             MetricFamily {
                 name: Some("bad\nfamily".to_owned()),
                 help: None,
@@ -108,7 +118,7 @@ mod tests {
                         counter: Some(Counter {
                             value: Some(1.0),
                             exemplar: Some(Exemplar {
-                                label: vec![label("trace:id", "bad")],
+                                label: vec![label("trace:id", "nonstandard")],
                                 ..Default::default()
                             }),
                             created_timestamp: None,
@@ -116,7 +126,7 @@ mod tests {
                         ..Default::default()
                     },
                     Metric {
-                        label: vec![label("bad name", "dropped")],
+                        label: vec![label("bad name", "kept_nonstandard")],
                         counter: Some(Counter {
                             value: Some(2.0),
                             ..Default::default()
@@ -150,7 +160,7 @@ mod tests {
                             }],
                             exemplars: vec![
                                 Exemplar {
-                                    label: vec![label("bad#name", "bad")],
+                                    label: vec![label("bad#name", "nonstandard")],
                                     ..Default::default()
                                 },
                                 Exemplar {
@@ -189,32 +199,46 @@ mod tests {
                 .filter_map(|family| family.name.as_deref())
                 .collect::<Vec<_>>(),
             [
+                "bad\nfamily",
                 "protobuf_counter",
                 "protobuf_histogram",
                 "protobuf_sibling",
             ]
         );
 
-        assert_eq!(decoded[0].metric.len(), 1);
-        assert!(
-            decoded[0].metric[0]
+        assert_eq!(decoded[1].metric.len(), 2);
+        assert_eq!(
+            decoded[1].metric[0]
                 .counter
                 .as_ref()
                 .unwrap()
                 .exemplar
-                .is_none()
+                .as_ref()
+                .unwrap()
+                .label[0]
+                .name
+                .as_deref(),
+            Some("trace:id")
         );
-
-        assert_eq!(decoded[1].metric.len(), 1);
-        let histogram = decoded[1].metric[0].histogram.as_ref().unwrap();
-        assert!(histogram.bucket[0].exemplar.is_none());
-        assert_eq!(histogram.exemplars.len(), 1);
         assert_eq!(
-            histogram.exemplars[0].label[0].name.as_deref(),
-            Some("trace_id")
+            decoded[1].metric[1].label[0].name.as_deref(),
+            Some("bad name")
         );
 
         assert_eq!(decoded[2].metric.len(), 1);
+        let histogram = decoded[2].metric[0].histogram.as_ref().unwrap();
+        assert!(histogram.bucket[0].exemplar.is_none());
+        assert_eq!(histogram.exemplars.len(), 2);
+        assert_eq!(
+            histogram
+                .exemplars
+                .iter()
+                .map(|exemplar| exemplar.label[0].name.as_deref().unwrap())
+                .collect::<Vec<_>>(),
+            ["bad#name", "trace_id"]
+        );
+
+        assert_eq!(decoded[3].metric.len(), 1);
     }
 
     #[test]
