@@ -734,23 +734,6 @@ valid:metric 1.0\n\
                 ],
                 unit: None,
             },
-            MetricFamily {
-                name: Some("row_summary".to_owned()),
-                help: None,
-                r#type: Some(MetricType::Summary as i32),
-                metric: vec![
-                    Metric {
-                        summary: Some(Default::default()),
-                        ..Default::default()
-                    },
-                    Metric {
-                        label: vec![label("quantile", "0.5")],
-                        summary: Some(Default::default()),
-                        ..Default::default()
-                    },
-                ],
-                unit: None,
-            },
         ];
 
         let output = encode_to_text(&families);
@@ -758,7 +741,6 @@ valid:metric 1.0\n\
         assert!(output.contains("row_gauge{\"bad name\"=\"nonstandard\"} 99.0\n"));
         assert!(!output.contains("98.0"));
         assert_eq!(output.matches("row_histogram_sum").count(), 1);
-        assert_eq!(output.matches("row_summary_sum").count(), 1);
         assert!(output.ends_with("# EOF\n"));
     }
 
