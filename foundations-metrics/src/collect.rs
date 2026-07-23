@@ -465,6 +465,7 @@ mod tests {
                     exemplars: vec![
                         Exemplar {
                             label: vec![label("bad name", "bad")],
+                            timestamp: Some(Default::default()),
                             ..Default::default()
                         },
                         Exemplar {
