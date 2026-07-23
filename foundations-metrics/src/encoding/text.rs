@@ -34,6 +34,14 @@ fn encode_family(output: &mut String, family: &MetricFamily) {
         ));
         return;
     };
+    let metric_type_name = match metric_type {
+        MetricType::Counter => "counter",
+        MetricType::Gauge => "gauge",
+        MetricType::Summary => return,
+        MetricType::Untyped => "unknown",
+        MetricType::Histogram => "histogram",
+        MetricType::GaugeHistogram => "gaugehistogram",
+    };
 
     if let Some(help) = &family.help {
         output.push_str("# HELP ");
@@ -46,7 +54,7 @@ fn encode_family(output: &mut String, family: &MetricFamily) {
     output.push_str("# TYPE ");
     output.push_str(name);
     output.push(' ');
-    output.push_str(metric_type_name(metric_type));
+    output.push_str(metric_type_name);
     output.push('\n');
 
     if let Some(unit) = &family.unit {
@@ -59,17 +67,6 @@ fn encode_family(output: &mut String, family: &MetricFamily) {
 
     for metric in &family.metric {
         encode_metric(output, name, metric_type, metric);
-    }
-}
-
-fn metric_type_name(metric_type: MetricType) -> &'static str {
-    match metric_type {
-        MetricType::Counter => "counter",
-        MetricType::Gauge => "gauge",
-        MetricType::Summary => "summary",
-        MetricType::Untyped => "unknown",
-        MetricType::Histogram => "histogram",
-        MetricType::GaugeHistogram => "gaugehistogram",
     }
 }
 
@@ -103,37 +100,7 @@ fn encode_metric(output: &mut String, name: &str, metric_type: MetricType, metri
                 SampleValue::Float(gauge.value.unwrap_or_default()),
             );
         }
-        MetricType::Summary => {
-            let Some(summary) = &metric.summary else {
-                report_missing_value(name, "summary");
-                return;
-            };
-            for quantile in &summary.quantile {
-                write_sample(
-                    output,
-                    name,
-                    "",
-                    metric,
-                    Some(("quantile", quantile.quantile.unwrap_or_default())),
-                    SampleValue::Float(quantile.value.unwrap_or_default()),
-                    None,
-                );
-            }
-            write_plain_sample(
-                output,
-                name,
-                "_sum",
-                metric,
-                SampleValue::Float(summary.sample_sum.unwrap_or_default()),
-            );
-            write_plain_sample(
-                output,
-                name,
-                "_count",
-                metric,
-                SampleValue::Unsigned(summary.sample_count.unwrap_or_default()),
-            );
-        }
+        MetricType::Summary => {}
         MetricType::Untyped => {
             let Some(untyped) = &metric.untyped else {
                 report_missing_value(name, "untyped value");
@@ -491,6 +458,22 @@ request_duration_seconds_bucket{route=\"/test\",le=\"+Inf\"} 3\n\
 
         let output = encode_to_text(&families);
         assert!(output.contains("values_bucket{le=\"+Inf\"} 2\n"));
+    }
+
+    #[test]
+    fn omits_summary_families() {
+        let families = [MetricFamily {
+            name: Some("request_size".to_owned()),
+            help: Some("Request size.".to_owned()),
+            r#type: Some(MetricType::Summary as i32),
+            metric: vec![Metric {
+                summary: Some(Default::default()),
+                ..Default::default()
+            }],
+            unit: None,
+        }];
+
+        assert_eq!(encode_to_text(&families), "# EOF\n");
     }
 
     #[test]
