@@ -1,0 +1,21 @@
+foundations-metrics/Cargo.toml
+  s_c9f375c01e9da4::t_a23df137f0213b 19
+foundations-metrics/src/labels/serializer.rs
+  s_c9f375c01e9da4::t_e75edc51f63a22 5,17-18,151-154,157-165,205-275,551-567
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "4967a8f02f599d7aaf9a33fee00ab3cda5ac8538",
+  "prompts": {},
+  "sessions": {
+    "s_c9f375c01e9da4": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_07ac65ceaffeTYJrKPc480Ia1Y",
+        "model": "@cf/moonshotai/kimi-k2.6"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
