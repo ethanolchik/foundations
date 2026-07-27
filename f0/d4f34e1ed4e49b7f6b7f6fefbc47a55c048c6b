@@ -1,0 +1,27 @@
+Cargo.toml
+  s_c9f375c01e9da4::t_30435f120fc7f0 47-48
+foundations-macros/src/metrics/mod.rs
+  s_c9f375c01e9da4::t_cc4ba090f054d6 161,163,210,218,272-277,292,305,308,318-319,321-325,327-329,371,398,407,498-499,501-505,507-509,560-561,563-567,569-571,626-627,629-633,635-637,645-646,648-652,654-656,710,742-743,745-749,751-753,776,816,841,845-846,848-852,854-856,862,866-867,869-873,875-877,898,934,960-961,963-967,969-971,984,994,1002
+foundations-metrics/src/lib.rs
+  s_c9f375c01e9da4::t_2a6c0774cd4ded 12,23,25
+foundations/Cargo.toml
+  s_c9f375c01e9da4::t_67456f0795fb5a 36,218-222,237-238
+foundations/src/telemetry/metrics/init.rs
+  s_c9f375c01e9da4::t_b133e4529c21bb 1-3,7-42,48,50-68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "f0d4f34e1ed4e49b7f6b7f6fefbc47a55c048c6b",
+  "prompts": {},
+  "sessions": {
+    "s_c9f375c01e9da4": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_07ac65ceaffeTYJrKPc480Ia1Y",
+        "model": "@cf/moonshotai/kimi-k2.6"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
