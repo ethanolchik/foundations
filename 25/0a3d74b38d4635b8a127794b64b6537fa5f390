@@ -1,0 +1,31 @@
+foundations-metrics/Cargo.toml
+  s_722585d419ae76::t_1e83b12eb778b0 4
+foundations-metrics/src/lib.rs
+  s_bffa165f95201f::t_72a1589a00ecb1 7-9
+foundations/Cargo.toml
+  s_722585d419ae76::t_71fc4c7d8e87a5 221-224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "250a3d74b38d4635b8a127794b64b6537fa5f390",
+  "prompts": {},
+  "sessions": {
+    "s_722585d419ae76": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_05713f90cffe7nMldqUFyhOYDF",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    },
+    "s_bffa165f95201f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0573f7641ffeZf8OU0rVm01eZg",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
