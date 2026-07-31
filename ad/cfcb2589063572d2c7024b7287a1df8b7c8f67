@@ -1,0 +1,19 @@
+foundations-metrics/src/lib.rs
+  s_c9f375c01e9da4::t_f479b6c6218fd5 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "adcfcb2589063572d2c7024b7287a1df8b7c8f67",
+  "prompts": {},
+  "sessions": {
+    "s_c9f375c01e9da4": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_07ac65ceaffeTYJrKPc480Ia1Y",
+        "model": "@cf/moonshotai/kimi-k2.6"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
