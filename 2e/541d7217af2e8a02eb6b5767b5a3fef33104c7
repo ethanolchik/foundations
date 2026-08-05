@@ -1,0 +1,25 @@
+foundations-metrics/src/lib.rs
+  s_8a8ecc97e8b475::t_54e02afdf6923e 35-36
+foundations-metrics/src/metrics/mod.rs
+  s_8a8ecc97e8b475::t_68b0399b1b458c 51
+foundations-metrics/src/metrics/native_histogram.rs
+  s_8a8ecc97e8b475::t_f747df47a7d078 18,120-199,695-806
+foundations/src/telemetry/metrics/mod.rs
+  s_8a8ecc97e8b475::t_43f144b56c63df 52-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "2e541d7217af2e8a02eb6b5767b5a3fef33104c7",
+  "prompts": {},
+  "sessions": {
+    "s_8a8ecc97e8b475": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_04dcce773ffenJL7kpanK8hl6m",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
