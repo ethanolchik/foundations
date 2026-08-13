@@ -1,0 +1,123 @@
+foundations-metrics-registry/src/encode_metric.rs
+  s_9533da72210ca3::t_dd696adbf5fdc7 7-50
+foundations-metrics/src/lib.rs
+  s_9533da72210ca3::t_ab4d2c0d14cc90 31,42
+  s_9533da72210ca3::t_42c4baf702e464 27-29,41
+  s_1a893f910ea3d0::t_c6239167f85132 1,3-6,8
+foundations-metrics/src/value.rs
+  s_9533da72210ca3::t_2dee694b131a42 9-82
+foundations-metrics/tests/custom_metric.rs
+  s_9533da72210ca3::t_d420f6607307ad 1-192
+foundations-macros/src/metrics/mod.rs
+  s_9533da72210ca3::t_6a08490feb629a 161,163,210,218,272-277,292,303,306,316-317,319-323,325-327,383,410,419,510-511,513-517,519-521,572-573,575-579,581-583,638-639,641-645,647-649,657-658,660-664,666-668,722,754-755,757-761,763-765,788,828,853,857-858,860-864,866-868,874,878-879,881-885,887-889,910,946,972-973,975-979,981-983,996,1006,1014
+foundations-sentry/tests/sentry_hook.rs
+  s_9533da72210ca3::t_65fc7aed027fb3 37-38,43-47
+foundations/Cargo.toml
+  s_9533da72210ca3::t_e794089fbfecbb 218,219-220,235-236
+  s_d18858a73452b3::t_58091171a7bd94 36
+foundations/src/telemetry/metrics/init.rs
+  s_9533da72210ca3::t_6a4e1cb55c9d3d 1-3,7-42,58,60-76
+  s_9533da72210ca3::t_e6340dfe0f1595 47-57,85-149
+foundations/src/telemetry/metrics/internal.rs
+  s_9533da72210ca3::t_817e32ae48de47 8,215-234
+  s_9533da72210ca3::t_d3f3754f486244 1-6
+foundations/src/telemetry/metrics/internal_backend.rs
+  s_9533da72210ca3::t_87818ec6f8d3d3 1-27
+foundations/src/telemetry/mod.rs
+  s_9533da72210ca3::t_8c10bd811eb627 405-407,431
+  s_9533da72210ca3::t_dfaa7acfe30064 347
+foundations/tests/custom_metric_via_facade.rs
+  s_9533da72210ca3::t_70a31d3f7e10f0 1-8,10-14,18-63,65-73
+  s_d18858a73452b3::t_54095cefaaf583 9,15-17,64
+foundations/tests/info_metrics.rs
+  s_9533da72210ca3::t_fcd0cc4c8676fa 1-6,11-45,47-64
+  s_d18858a73452b3::t_7cf03ec1415904 7-10,46
+foundations/tests/metrics.rs
+  s_9533da72210ca3::t_001fe08e1ab8dd 9,10,60,63,77-79,85-88,138-139
+  s_9533da72210ca3::t_832d19e24f6f6c 89
+  s_d18858a73452b3::t_25e39fce109b30 2,6-8,57,96,135
+foundations/tests/panic_hook.rs
+  s_9533da72210ca3::t_3380dc0842bf84 45,46,48
+  s_d18858a73452b3::t_f4897abb4d683c 21-23,47
+foundations-metrics-registry/src/metadata.rs
+  s_9533da72210ca3::t_0d94124a16a172 17-18,27-28
+foundations-metrics/src/encoding/text.rs
+  s_0e276486621a32::t_2cb45377fcaf98 16-18,97,111,275-277,304,449-456,466-470,472,540,564,602,744,759-760,786,864,866,959-961,1033-1034,1036
+foundations-metrics/src/metrics/exemplar.rs
+  s_9533da72210ca3::t_8913cfcd4b3bc7 564,701
+foundations-metrics/src/collect.rs
+  s_9533da72210ca3::t_d77c9013af9ae5 106-111,115-120
+foundations-metrics/src/encoding/mod.rs
+  s_9533da72210ca3::t_17061f0a262d67 10-13
+foundations-metrics/src/validation.rs
+  s_9533da72210ca3::t_a667034d88f210 7-9,30-38,40-41
+foundations/src/telemetry/metrics/mod.rs
+  s_9533da72210ca3::t_537efef36675ba 90-111,208,227,234,239-240,242,245-246,248-252,254,263-264,710,721-722,739,749,755
+  s_d18858a73452b3::t_23a87f260cbfc8 38,61-63,88-89,130-142,147,158,160,170-176,178-187,188-189,233,237,255-256,262,636,643,657
+foundations/src/telemetry/server/router.rs
+  s_9533da72210ca3::t_40be94325e1ab1 120-125,136-137
+  s_d18858a73452b3::t_365e537a9bfd15 127-130,132-133,135
+foundations/tests/metrics_negotiation.rs
+  s_9533da72210ca3::t_e42f0c26846353 1-12,15-17,22-30,34-95,102-113,136
+  s_d18858a73452b3::t_52141b2b0f5c45 18-21,127
+foundations/tests/metrics_negotiation_extra_producers.rs
+  s_9533da72210ca3::t_a13c5c8865cf29 1-127,143
+  s_d18858a73452b3::t_1c8c70c2aa80c5 128-130,135-142
+foundations/tests/metrics_service_label_validation.rs
+  s_9533da72210ca3::t_d4c8717f08b25a 1-49
+foundations-metrics-registry/src/lib.rs
+  s_1a893f910ea3d0::t_7d0e31eb557d5b 7
+foundations-metrics/README.md
+  s_1a893f910ea3d0::t_d93d6b38fe3ead 3-6,12-16,18-23,38,47-50,54-55,62-77,89
+  s_d18858a73452b3::t_464670431dafcb 11
+Cargo.toml
+  s_d18858a73452b3::t_0c89ca0757a2e9 47-48
+foundations/src/telemetry/metrics/negotiation.rs
+  s_d18858a73452b3::t_5f5e9a56e6c9ff 1-3,7-391
+foundations-metrics-registry/Cargo.toml
+  s_d18858a73452b3::t_c7242d2b188392 4
+examples/Cargo.toml
+  s_d18858a73452b3::t_43a0fef76ea500 13-15
+foundations/tests/common/mod.rs
+  s_d18858a73452b3::t_bf5dc16a6e0d43 1-2,4-7,11,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "283e01252451c5e2f1c9cb0ae159ff5a5cc9ca6e",
+  "prompts": {},
+  "sessions": {
+    "s_0e276486621a32": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_028910d7fffeHtCStmvrN9nd66",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    },
+    "s_1a893f910ea3d0": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_00ae0ca16ffeDJX8nuZg33ivVA",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    },
+    "s_9533da72210ca3": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0471ad735ffehHmEZuQF0bnKNt",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    },
+    "s_d18858a73452b3": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0093ce141ffe2VB4UvJtKALDs6",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Ethan Olchik <eolchik@cloudflare.com>"
+    }
+  }
+}
